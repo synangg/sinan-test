@@ -6,6 +6,7 @@ import { motion } from 'framer-motion'
 import { ShoppingBag, Star } from 'lucide-react'
 import { Product } from '@/types'
 import { useCart } from '@/context/CartContext'
+import { useLang } from '@/context/LanguageContext'
 import { PlaceholderImage } from '@/components/ui/PlaceholderImage'
 
 interface ProductCardProps {
@@ -14,8 +15,12 @@ interface ProductCardProps {
 
 export function ProductCard({ product }: ProductCardProps) {
   const { addItem } = useCart()
+  const { t, lang } = useLang()
   const [imageIndex, setImageIndex] = useState(0)
   const [adding, setAdding] = useState(false)
+
+  const displayName = lang === 'en' && product.nameEn ? product.nameEn : product.name
+  const displayDesc = lang === 'en' && product.shortDescriptionEn ? product.shortDescriptionEn : product.shortDescription
 
   const handleAddToCart = async (e: React.MouseEvent) => {
     e.preventDefault()
@@ -73,7 +78,7 @@ export function ProductCard({ product }: ProductCardProps) {
         <div className="absolute top-3 left-3 flex flex-col gap-2 z-10">
           {product.isBestSeller && (
             <span className="font-sans text-[9px] tracking-[0.2em] uppercase bg-gold text-obsidian px-2 py-1 font-semibold">
-              Best Seller
+              {t.product.bestSeller}
             </span>
           )}
           {discount && (
@@ -94,7 +99,7 @@ export function ProductCard({ product }: ProductCardProps) {
           ) : (
             <>
               <ShoppingBag size={12} />
-              Quick Add
+              {t.product.quickAdd}
             </>
           )}
         </motion.button>
@@ -118,11 +123,11 @@ export function ProductCard({ product }: ProductCardProps) {
       <div className="space-y-1.5">
         <div className="flex items-start justify-between gap-2">
           <h3 className="font-serif text-base text-cream group-hover:text-gold transition-colors duration-300 leading-tight">
-            {product.name}
+            {displayName}
           </h3>
         </div>
         <p className="font-sans text-xs text-cream/40 leading-relaxed line-clamp-2">
-          {product.shortDescription}
+          {displayDesc}
         </p>
         <div className="flex items-center justify-between pt-1">
           <div className="flex items-center gap-2">

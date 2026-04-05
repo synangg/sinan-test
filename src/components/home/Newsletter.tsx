@@ -3,17 +3,20 @@
 import { useState, FormEvent } from 'react'
 import { motion } from 'framer-motion'
 import { ArrowRight, CheckCircle } from 'lucide-react'
+import { useLang } from '@/context/LanguageContext'
+import { extraTranslations } from '@/lib/translations'
 
 export function Newsletter() {
   const [email, setEmail] = useState('')
   const [submitted, setSubmitted] = useState(false)
   const [loading, setLoading] = useState(false)
+  const { lang } = useLang()
+  const n = extraTranslations[lang].newsletter
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault()
     if (!email) return
     setLoading(true)
-    // Simulate API call
     await new Promise((r) => setTimeout(r, 800))
     setSubmitted(true)
     setLoading(false)
@@ -30,15 +33,12 @@ export function Newsletter() {
           className="max-w-xl mx-auto text-center"
         >
           <span className="font-sans text-xs tracking-[0.25em] uppercase text-gold font-medium">
-            The Journal
+            {n.label}
           </span>
           <h2 className="font-serif text-3xl md:text-4xl text-cream mt-4 mb-4 leading-tight">
-            Craft Notes & First Access
+            {n.title}
           </h2>
-          <p className="font-sans text-sm text-cream/50 mb-8 leading-relaxed">
-            Join 12,000 subscribers. Monthly dispatches on leather care, new arrivals, and the
-            occasional behind-the-scenes from the workshop. No noise.
-          </p>
+          <p className="font-sans text-sm text-cream/50 mb-8 leading-relaxed">{n.subtitle}</p>
 
           {submitted ? (
             <motion.div
@@ -47,10 +47,8 @@ export function Newsletter() {
               className="flex flex-col items-center gap-3 py-4"
             >
               <CheckCircle size={32} className="text-gold" />
-              <p className="font-serif text-xl text-cream">You are in.</p>
-              <p className="font-sans text-sm text-cream/50">
-                Welcome to the BLACKHIDE community. Expect your first dispatch soon.
-              </p>
+              <p className="font-serif text-xl text-cream">{n.successTitle}</p>
+              <p className="font-sans text-sm text-cream/50">{n.successText}</p>
             </motion.div>
           ) : (
             <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-0">
@@ -58,7 +56,7 @@ export function Newsletter() {
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                placeholder="your@email.com"
+                placeholder={n.placeholder}
                 required
                 className="flex-1 bg-obsidian border border-white/10 px-5 py-4 text-cream placeholder:text-cream/25 font-sans text-sm focus:outline-none focus:border-gold/50 transition-colors duration-300"
               />
@@ -70,18 +68,14 @@ export function Newsletter() {
                 {loading ? (
                   <span className="w-4 h-4 border-2 border-obsidian/30 border-t-obsidian rounded-full animate-spin" />
                 ) : (
-                  <>
-                    Subscribe <ArrowRight size={12} />
-                  </>
+                  <>{n.subscribe} <ArrowRight size={12} /></>
                 )}
               </button>
             </form>
           )}
 
           {!submitted && (
-            <p className="font-sans text-xs text-cream/25 mt-4">
-              Unsubscribe at any time. No spam, ever.
-            </p>
+            <p className="font-sans text-xs text-cream/25 mt-4">{n.unsubscribe}</p>
           )}
         </motion.div>
       </div>

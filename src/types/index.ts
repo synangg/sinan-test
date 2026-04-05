@@ -1,11 +1,9 @@
 export type ProductCategory =
-  | 'jackets'
-  | 'bags'
-  | 'wallets'
-  | 'belts'
-  | 'duffle-bags'
-  | 'card-holders'
-  | 'accessories'
+  | 'ham-deri'
+  | 'canta'
+  | 'cuzdan'
+  | 'kemer'
+  | 'aksesuar'
 
 export interface ProductColor {
   name: string
@@ -20,11 +18,13 @@ export interface ProductVariants {
 export interface Product {
   id: string
   name: string
+  nameEn?: string
   slug: string
   category: ProductCategory
   price: number
   originalPrice?: number
   shortDescription: string
+  shortDescriptionEn?: string
   longDescription: string
   materials: string[]
   dimensions?: string

@@ -3,24 +3,7 @@
 import { useRouter, useSearchParams } from 'next/navigation'
 import { ProductCategory } from '@/types'
 import { SlidersHorizontal } from 'lucide-react'
-
-const categories: { label: string; value: ProductCategory | 'all' }[] = [
-  { label: 'All', value: 'all' },
-  { label: 'Jackets', value: 'jackets' },
-  { label: 'Bags', value: 'bags' },
-  { label: 'Duffle Bags', value: 'duffle-bags' },
-  { label: 'Wallets', value: 'wallets' },
-  { label: 'Belts', value: 'belts' },
-  { label: 'Card Holders', value: 'card-holders' },
-  { label: 'Accessories', value: 'accessories' },
-]
-
-const sortOptions = [
-  { label: 'Featured', value: 'featured' },
-  { label: 'Price: Low to High', value: 'price-asc' },
-  { label: 'Price: High to Low', value: 'price-desc' },
-  { label: 'Best Rated', value: 'rating' },
-]
+import { useLang } from '@/context/LanguageContext'
 
 interface FilterBarProps {
   activeCategory: string
@@ -31,6 +14,23 @@ interface FilterBarProps {
 export function FilterBar({ activeCategory, activeSort, resultCount }: FilterBarProps) {
   const router = useRouter()
   const searchParams = useSearchParams()
+  const { t } = useLang()
+  const s = t.shop
+
+  const categories: { label: string; value: ProductCategory | 'all' }[] = [
+    { label: s.categories.all, value: 'all' },
+    { label: s.categories['ham-deri'], value: 'ham-deri' },
+    { label: s.categories['canta'], value: 'canta' },
+    { label: s.categories['cuzdan'], value: 'cuzdan' },
+    { label: s.categories['kemer'], value: 'kemer' },
+  ]
+
+  const sortOptions = [
+    { label: s.sort.featured, value: 'featured' },
+    { label: s.sort['price-asc'], value: 'price-asc' },
+    { label: s.sort['price-desc'], value: 'price-desc' },
+    { label: s.sort.rating, value: 'rating' },
+  ]
 
   const updateParam = (key: string, value: string) => {
     const params = new URLSearchParams(searchParams.toString())
@@ -44,7 +44,6 @@ export function FilterBar({ activeCategory, activeSort, resultCount }: FilterBar
 
   return (
     <div className="border-b border-white/5 pb-6 mb-10">
-      {/* Category pills */}
       <div className="flex items-center gap-2 flex-wrap mb-6">
         {categories.map((cat) => (
           <button
@@ -61,12 +60,10 @@ export function FilterBar({ activeCategory, activeSort, resultCount }: FilterBar
         ))}
       </div>
 
-      {/* Sort + count row */}
       <div className="flex items-center justify-between gap-4">
         <p className="font-sans text-xs text-cream/30">
-          {resultCount} {resultCount === 1 ? 'product' : 'products'}
+          {resultCount} {s.products}
         </p>
-
         <div className="flex items-center gap-2">
           <SlidersHorizontal size={14} className="text-cream/30" />
           <select

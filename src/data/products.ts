@@ -1,359 +1,268 @@
 import { Product, Testimonial } from '@/types'
 
 export const products: Product[] = [
+  // ── HAM DERİ / POST ──────────────────────────────────────────────────────────
   {
     id: '001',
-    name: 'Midnight Moto Jacket',
-    slug: 'midnight-moto-jacket',
-    category: 'jackets',
-    price: 485,
-    shortDescription:
-      'Full-grain cowhide moto jacket with asymmetric zip closure. Built to age with you.',
-    longDescription:
-      'The Midnight Moto Jacket is the cornerstone of the BLACKHIDE collection. Cut from a single hide of full-grain cowhide, each jacket carries the natural markings and character of the leather. The asymmetric zip closure, snap-button lapels, and quilted shoulder panels are finished entirely by hand. This jacket does not soften with dry heat — it earns its shape through wear, developing a patina unique to its owner.',
-    materials: ['Full-grain cowhide leather', 'Solid brass hardware', 'Viscose lining'],
-    dimensions: 'Available in S, M, L, XL, XXL',
-    weight: '1.8 kg',
-    images: [
-      '/images/products/midnight-moto-jacket-01.jpg',
-      '/images/products/midnight-moto-jacket-02.jpg',
-      '/images/products/midnight-moto-jacket-03.jpg',
-    ],
-    variants: {
-      colors: [
-        { name: 'Midnight Black', hex: '#0D0D0D' },
-        { name: 'Cognac', hex: '#8B4513' },
-        { name: 'Slate Brown', hex: '#4A3728' },
-      ],
-      sizes: ['S', 'M', 'L', 'XL', 'XXL'],
-    },
-    tags: ['jacket', 'moto', 'bestseller', 'full-grain'],
+    name: 'Doğal Koyun Postu',
+    nameEn: 'Natural Sheepskin Rug',
+    slug: 'dogal-koyun-postu',
+    category: 'ham-deri',
+    price: 850,
+    shortDescription: 'Tabaklanmış, doğal beyaz koyun postu. Şömüne önü, halı ve döşemelik kullanım için ideal.',
+    shortDescriptionEn: 'Tanned natural white sheepskin. Ideal for fireside, rugs and upholstery use.',
+    longDescription: 'El işçiliğiyle tabaklanmış bu doğal koyun postu, yoğun ve yumuşak tüy yapısıyla hem estetik hem de işlevsel bir üründür. Şömüne önünde, yatak odasında ya da salon köşesinde kullanımda uzun yıllar dayanıklılığını korur.',
+    materials: ['%100 Tabii koyun postu', 'Doğal tabaklanmış', 'Kimyasal boyasız'],
+    dimensions: 'Ortalama 90×60 cm',
+    weight: '1.2 kg',
+    images: ['/images/products/koyun-postu-dogal-01.jpg', '/images/products/koyun-postu-dogal-02.jpg'],
+    variants: { colors: [{ name: 'Doğal Beyaz', hex: '#F5F0E8' }, { name: 'Krem', hex: '#E8DEC8' }] },
+    tags: ['ham-deri', 'koyun', 'post', 'dogal'],
     isBestSeller: true,
     isFeatured: true,
     rating: 4.9,
-    reviewCount: 284,
-    careInstructions:
-      'Apply leather conditioner every 3–6 months. Avoid prolonged moisture. Store on a padded hanger.',
+    reviewCount: 127,
+    careInstructions: 'Doğrudan güneş ışığından uzak tutun. Kuru temizleme önerilir.',
   },
   {
     id: '002',
-    name: 'Heritage Duffle',
-    slug: 'heritage-duffle',
-    category: 'duffle-bags',
-    price: 345,
-    shortDescription:
-      'A weekend bag built for decades of travel. Full-grain leather with solid brass fittings.',
-    longDescription:
-      'The Heritage Duffle is a study in restraint. The main compartment holds a weekend\'s worth of clothing with room to spare. Internal organization keeps essentials accessible. The rolled leather handles and removable shoulder strap distribute weight naturally. Every seam is saddle-stitched with waxed linen thread — a technique unchanged for centuries because it works. This bag will outlive your passport.',
-    materials: ['Full-grain vegetable-tanned leather', 'Solid brass hardware', 'Cotton canvas lining'],
-    dimensions: '56cm × 28cm × 28cm',
+    name: 'Siyah Boyalı Koyun Postu',
+    nameEn: 'Black Dyed Sheepskin Rug',
+    slug: 'siyah-koyun-postu',
+    category: 'ham-deri',
+    price: 950,
+    shortDescription: 'Doğal koyun postunun el boyamasıyla siyaha işlenmiş hâli. Modern iç mekânlar için.',
+    shortDescriptionEn: 'Natural sheepskin hand-dyed to a rich black. For modern interiors.',
+    longDescription: 'Doğal koyun postu, bitkisel bazlı boyalarla işlenerek zengin siyah tonuna kavuşturulur. Tüyün yumuşaklığı ve yoğunluğu korunurken renk, zamana karşı dayanıklı hâle getirilir.',
+    materials: ['%100 Tabii koyun postu', 'Bitkisel boya', 'Doğal tabaklanmış'],
+    dimensions: 'Ortalama 90×60 cm',
     weight: '1.2 kg',
-    images: [
-      '/images/products/heritage-duffle-01.jpg',
-      '/images/products/heritage-duffle-02.jpg',
-      '/images/products/heritage-duffle-03.jpg',
-    ],
-    variants: {
-      colors: [
-        { name: 'Dark Tan', hex: '#8B6914' },
-        { name: 'Mahogany', hex: '#5C1F0A' },
-        { name: 'Midnight Black', hex: '#0D0D0D' },
-      ],
-    },
-    tags: ['duffle', 'travel', 'weekend bag', 'full-grain'],
-    isBestSeller: true,
+    images: ['/images/products/koyun-postu-siyah-01.jpg', '/images/products/koyun-postu-siyah-02.jpg'],
+    variants: { colors: [{ name: 'Siyah', hex: '#1A1A1A' }, { name: 'Koyu Kahve', hex: '#2C1810' }] },
+    tags: ['ham-deri', 'koyun', 'post', 'siyah'],
+    isBestSeller: false,
     isFeatured: true,
     rating: 4.8,
-    reviewCount: 197,
-    careInstructions:
-      'Condition with pure neatsfoot oil twice yearly. Spot clean with a damp cloth. Allow to dry naturally away from direct heat.',
+    reviewCount: 84,
+    careInstructions: 'Kuru tutun. Deri bakım kremi ile yılda bir kez besleyin.',
   },
   {
     id: '003',
-    name: 'Cordovan Bifold',
-    slug: 'cordovan-bifold',
-    category: 'wallets',
-    price: 125,
-    originalPrice: 160,
-    shortDescription:
-      'Shell cordovan bifold wallet. Eight card slots, two cash pockets. Will last a lifetime.',
-    longDescription:
-      'Shell cordovan is the finest leather in the world — a non-porous, dense material cut from the rump of the horse. Unlike corrected-grain leathers, cordovan develops a mirror-like patina over years of use rather than cracking or peeling. The Cordovan Bifold features eight card slots, two full-length cash pockets, and an ID window. Slim enough for a front pocket from day one.',
-    materials: ['Horween Shell Cordovan', 'Linen thread stitching'],
-    dimensions: '11cm × 9.5cm × 1cm (flat)',
-    weight: '65g',
-    images: [
-      '/images/products/cordovan-bifold-01.jpg',
-      '/images/products/cordovan-bifold-02.jpg',
-    ],
-    variants: {
-      colors: [
-        { name: 'Colour 8 (Oxblood)', hex: '#4A0E0E' },
-        { name: 'Natural', hex: '#C8956A' },
-        { name: 'Black', hex: '#1A1A1A' },
-      ],
-    },
-    tags: ['wallet', 'bifold', 'cordovan', 'slim'],
+    name: 'Taba Dana Derisi',
+    nameEn: 'Tan Full-Grain Cowhide',
+    slug: 'taba-dana-derisi',
+    category: 'ham-deri',
+    price: 1200,
+    originalPrice: 1450,
+    shortDescription: 'Full-grain dana derisi, taba rengi. Çanta, kemer ve döşemelik projeler için standart ham madde.',
+    shortDescriptionEn: 'Full-grain cowhide in tan. Standard raw material for bags, belts and upholstery projects.',
+    longDescription: 'Birinci kalite full-grain dana derisi, geleneksel bitkisel tabaklamadan geçirilerek işlenmektedir. Taba rengi, ışıkla birlikte derin ve sıcak bir ton sergiler.',
+    materials: ['Full-grain dana derisi', 'Bitkisel tabaklanmış', 'Doğal taba boya'],
+    dimensions: '30–45 sq ft (adet başına değişir)',
+    weight: '2.5 kg/adet',
+    images: ['/images/products/dana-derisi-taba-01.jpg', '/images/products/dana-derisi-taba-01.jpg'],
+    variants: { colors: [{ name: 'Taba', hex: '#B8860B' }, { name: 'Koyu Taba', hex: '#8B6914' }, { name: 'Naturel', hex: '#D4A96A' }] },
+    tags: ['ham-deri', 'dana', 'full-grain', 'taba'],
     isBestSeller: true,
     isFeatured: false,
-    rating: 5.0,
-    reviewCount: 412,
-    careInstructions:
-      'Polish with a horsehair brush. Apply cordovan cream sparingly every 6 months. Never use wax polish.',
+    rating: 4.9,
+    reviewCount: 203,
+    careInstructions: 'Serin ve kuru ortamda saklayın. Katlamayın, rulo yapın.',
   },
   {
     id: '004',
-    name: 'Garrison Belt',
-    slug: 'garrison-belt',
-    category: 'belts',
-    price: 95,
-    shortDescription:
-      'One-piece full-grain leather dress belt. Solid brass roller buckle. Cut to order.',
-    longDescription:
-      'The Garrison Belt is cut from a single piece of full-grain leather — no layers, no lamination, no compromise. The solid brass roller buckle is hand-set with a secure screw post. Available in half-inch size increments for a perfect fit. The leather is thick enough to hold its shape but supple enough from the first wear. Available in 1.25" and 1.5" widths for dress and casual wear respectively.',
-    materials: ['Full-grain Hermann Oak leather', 'Solid brass roller buckle'],
-    dimensions: 'Cut to order — specify waist size at checkout',
-    weight: '280g',
-    images: [
-      '/images/products/garrison-belt-01.jpg',
-      '/images/products/garrison-belt-02.jpg',
-    ],
-    variants: {
-      colors: [
-        { name: 'Dark Havana', hex: '#3D1F0A' },
-        { name: 'Saddle Tan', hex: '#A0622A' },
-        { name: 'Black', hex: '#1A1A1A' },
-      ],
-      sizes: ['28"', '30"', '32"', '34"', '36"', '38"', '40"', '42"', '44"'],
-    },
-    tags: ['belt', 'dress', 'full-grain', 'made-to-order'],
-    isBestSeller: false,
-    isFeatured: true,
-    rating: 4.9,
-    reviewCount: 156,
-    careInstructions:
-      'Apply leather conditioner twice yearly. Avoid prolonged contact with water.',
-  },
-  {
-    id: '005',
-    name: 'Nomad Messenger',
-    slug: 'nomad-messenger',
-    category: 'bags',
-    price: 275,
-    shortDescription:
-      'Full-grain leather messenger bag with an adjustable strap and magnetic closure.',
-    longDescription:
-      'Built for the daily commute and the cross-continental journey alike, the Nomad Messenger carries a 15" laptop, documents, and daily essentials with ease. The magnetic front flap conceals two secondary pockets. The padded laptop compartment protects your tech. The solid brass D-ring and sliding shoulder pad make it the most comfortable bag you will carry. The leather will only get better.',
-    materials: ['Full-grain pull-up leather', 'Solid brass hardware', 'Padded laptop compartment'],
-    dimensions: '40cm × 30cm × 10cm',
-    weight: '900g',
-    images: [
-      '/images/products/nomad-messenger-01.jpg',
-      '/images/products/nomad-messenger-02.jpg',
-    ],
-    variants: {
-      colors: [
-        { name: 'Chestnut', hex: '#6B3A2A' },
-        { name: 'Black', hex: '#1A1A1A' },
-      ],
-    },
-    tags: ['messenger', 'bag', 'laptop', 'daily carry'],
+    name: 'Bordo Dana Derisi',
+    nameEn: 'Burgundy Full-Grain Cowhide',
+    slug: 'bordo-dana-derisi',
+    category: 'ham-deri',
+    price: 1350,
+    shortDescription: 'Derin bordo tonunda full-grain dana derisi. Çanta ve kemer yapımı için tercih edilen ham madde.',
+    shortDescriptionEn: 'Full-grain cowhide in deep burgundy. Preferred raw material for bags and belt making.',
+    longDescription: 'Yoğun bordo tonu, bitkisel boyalarla elde edilmiş olup zamanla daha da derinleşir. Full-grain yapısı sayesinde her çizik ve izin altında temiz deri görünür.',
+    materials: ['Full-grain dana derisi', 'Bitkisel tabaklanmış', 'Bordo boya'],
+    dimensions: '30–45 sq ft',
+    weight: '2.5 kg/adet',
+    images: ['/images/products/dana-derisi-bordo-01.jpg', '/images/products/dana-derisi-bordo-01.jpg'],
+    variants: { colors: [{ name: 'Bordo', hex: '#722F37' }, { name: 'Vişne', hex: '#8B0000' }] },
+    tags: ['ham-deri', 'dana', 'full-grain', 'bordo'],
     isBestSeller: false,
     isFeatured: true,
     rating: 4.7,
-    reviewCount: 88,
-    careInstructions:
-      'Condition every 3 months. The pull-up effect means light scratches buff out with a thumb.',
+    reviewCount: 91,
+    careInstructions: 'Serin ve kuru ortamda saklayın. Rulo yaparak muhafaza edin.',
+  },
+
+  // ── ÇANTA ────────────────────────────────────────────────────────────────────
+  {
+    id: '005',
+    name: 'El Yapımı Dana Deri Omuz Çantası',
+    nameEn: 'Handmade Cowhide Shoulder Bag',
+    slug: 'dana-deri-omuz-cantasi',
+    category: 'canta',
+    price: 1800,
+    shortDescription: 'Full-grain dana derisinden el dikişiyle üretilmiş omuz çantası. Pirinç toka ve detaylar.',
+    shortDescriptionEn: 'Hand-stitched full-grain cowhide shoulder bag. Solid brass hardware throughout.',
+    longDescription: 'Her çanta, bir parça full-grain dana derisinden çelik şablonlarla kesilerek başlar. Dikişler eyer dikişiyle atılır. Pirinç toka ve halkalar, ömür boyu dayanacak şekilde takılır.',
+    materials: ['Full-grain dana derisi', 'Eyer dikişi (balmumu keten iplik)', 'Pirinç donanım'],
+    dimensions: '35×25×10 cm',
+    weight: '0.85 kg',
+    images: ['/images/products/omuz-cantasi-01.jpg', '/images/products/omuz-cantasi-02.jpg'],
+    variants: { colors: [{ name: 'Taba', hex: '#B8860B' }, { name: 'Siyah', hex: '#1A1A1A' }, { name: 'Bordo', hex: '#722F37' }] },
+    tags: ['canta', 'omuz', 'el-yapimi', 'dana'],
+    isBestSeller: true,
+    isFeatured: true,
+    rating: 5.0,
+    reviewCount: 58,
+    careInstructions: 'Deri bakım kremi ile 3–6 ayda bir besleyin. Uzun süreli nemden koruyun.',
   },
   {
     id: '006',
-    name: 'Slim Card Sleeve',
-    slug: 'slim-card-sleeve',
-    category: 'card-holders',
-    price: 65,
-    shortDescription:
-      'Holds 4–8 cards and cash. Shell cordovan construction. Fits any front pocket.',
-    longDescription:
-      'When you want nothing but your cards and a little cash, the Slim Card Sleeve is the answer. Two outer card pockets fan your cards for quick access. The center slot holds folded notes flat. At 4mm thick when loaded, it disappears into any pocket. Hand-stitched from the same Horween Shell Cordovan as our flagship wallet, it will develop the same legendary patina over the years.',
-    materials: ['Horween Shell Cordovan', 'Waxed linen thread'],
-    dimensions: '10cm × 7cm × 0.4cm (loaded)',
-    weight: '28g',
-    images: [
-      '/images/products/slim-card-sleeve-01.jpg',
-      '/images/products/slim-card-sleeve-02.jpg',
-    ],
-    variants: {
-      colors: [
-        { name: 'Colour 8 (Oxblood)', hex: '#4A0E0E' },
-        { name: 'Natural', hex: '#C8956A' },
-        { name: 'Whiskey', hex: '#C47B2B' },
-      ],
-    },
-    tags: ['card holder', 'slim', 'minimalist', 'cordovan'],
-    isBestSeller: true,
-    isFeatured: false,
-    rating: 4.9,
-    reviewCount: 331,
-    careInstructions:
-      'Brush with a horsehair brush. Polish with cordovan cream to maintain lustre.',
+    name: 'Koyun Derisi Evrak Çantası',
+    nameEn: 'Sheepskin Leather Briefcase',
+    slug: 'koyun-derisi-evrak-cantasi',
+    category: 'canta',
+    price: 2200,
+    originalPrice: 2600,
+    shortDescription: 'Yumuşak koyun derisinden el yapımı evrak çantası. Laptop bölmeli, pirinç kilit.',
+    shortDescriptionEn: 'Handmade soft sheepskin briefcase. Laptop compartment, brass clasp lock.',
+    longDescription: 'Koyun derisinin doğal esnekliği ve yumuşaklığı, bu evrak çantasını hem şık hem de hafif kılar. Ana bölme 15" laptopa uyumludur.',
+    materials: ['Tam grain koyun derisi', 'Eyer dikişi', 'Pirinç donanım', 'Pamuk kanvas astar'],
+    dimensions: '40×30×8 cm',
+    weight: '0.95 kg',
+    images: ['/images/products/evrak-cantasi-01.jpg', '/images/products/evrak-cantasi-01.jpg'],
+    variants: { colors: [{ name: 'Koyu Kahve', hex: '#3E1F00' }, { name: 'Siyah', hex: '#1A1A1A' }] },
+    tags: ['canta', 'evrak', 'laptop', 'koyun'],
+    isBestSeller: false,
+    isFeatured: true,
+    rating: 4.8,
+    reviewCount: 34,
+    careInstructions: 'Yumuşak kuru bezle silin. Deri kremi ile besleyin.',
   },
+
+  // ── CÜZDAN ───────────────────────────────────────────────────────────────────
   {
     id: '007',
-    name: 'Navigator Tote',
-    slug: 'navigator-tote',
-    category: 'bags',
-    price: 295,
-    originalPrice: 340,
-    shortDescription:
-      'Open-top tote in vegetable-tanned leather. Structured base, open interior, two side pockets.',
-    longDescription:
-      'The Navigator Tote is for those who carry everything and want it to look intentional. The structured leather base maintains the bag\'s shape regardless of how full it is. The vegetable-tanned leather starts stiff and pale, darkening and softening with every day of carry. Two interior slip pockets keep small items from getting lost. The wide top handles are double-stitched and reinforced at the attachment points. A bag that rewards daily use.',
-    materials: ['Vegetable-tanned Hermann Oak leather', 'Solid brass rivets', 'Linen canvas lining'],
-    dimensions: '38cm × 30cm × 14cm',
-    weight: '1.1 kg',
-    images: [
-      '/images/products/navigator-tote-01.jpg',
-      '/images/products/navigator-tote-02.jpg',
-    ],
-    variants: {
-      colors: [
-        { name: 'Natural Veg Tan', hex: '#D4A86A' },
-        { name: 'Dark Chestnut', hex: '#5C3018' },
-      ],
-    },
-    tags: ['tote', 'bag', 'everyday', 'vegetable-tanned'],
-    isBestSeller: false,
-    isFeatured: false,
-    rating: 4.8,
-    reviewCount: 74,
-    careInstructions:
-      'Veg-tan leather darkens naturally with exposure to sunlight and use. Condition with natural beeswax.',
+    name: 'El Yapımı Deri Bifold Cüzdan',
+    nameEn: 'Handmade Leather Bifold Wallet',
+    slug: 'el-yapimi-bifold-cuzdan',
+    category: 'cuzdan',
+    price: 450,
+    shortDescription: 'Full-grain dana derisinden el dikişiyle yapılmış bifold cüzdan. 8 kart bölmeli.',
+    shortDescriptionEn: 'Hand-stitched full-grain cowhide bifold wallet. 8 card slots.',
+    longDescription: 'Sade ve işlevsel tasarım, yıllar içinde güzelleşen full-grain dana derisiyle birleşiyor. 8 kart bölmesi ve geniş banknot cepleri günlük kullanım için yeterlidir.',
+    materials: ['Full-grain dana derisi', 'Balmumu keten iplik', 'Bitkisel tabaklanmış'],
+    dimensions: '11×9 cm (kapalı)',
+    weight: '60 g',
+    images: ['/images/products/bifold-cuzdan-01.jpg', '/images/products/bifold-cuzdan-02.jpg'],
+    variants: { colors: [{ name: 'Taba', hex: '#B8860B' }, { name: 'Siyah', hex: '#1A1A1A' }, { name: 'Bordo', hex: '#722F37' }, { name: 'Naturel', hex: '#D4A96A' }] },
+    tags: ['cuzdan', 'bifold', 'el-yapimi', 'dana'],
+    isBestSeller: true,
+    isFeatured: true,
+    rating: 4.9,
+    reviewCount: 312,
+    careInstructions: 'Altı ayda bir hafif deri kremi uygulayın. Islak bırakmayın.',
   },
   {
     id: '008',
-    name: 'Expedition Passport Wallet',
-    slug: 'expedition-passport-wallet',
-    category: 'accessories',
-    price: 115,
-    shortDescription:
-      'Holds a passport, 6 cards, boarding passes, and cash. Full-grain leather.',
-    longDescription:
-      'Everything you need at the airport, nothing you don\'t. The Expedition Passport Wallet holds a full-size passport flat against the back panel. Six card slots fan across the front. A wide slot holds boarding passes, SIM cards, and folded currency. A pen loop on the spine keeps a slim pen accessible. The full-grain cowhide construction means it gets better every trip. The passport holder that travels as hard as you do.',
-    materials: ['Full-grain cowhide', 'Solid brass pen holder loop', 'Linen stitching'],
-    dimensions: '14cm × 10cm × 1.5cm',
-    weight: '120g',
-    images: [
-      '/images/products/expedition-passport-01.jpg',
-      '/images/products/expedition-passport-02.jpg',
-    ],
-    variants: {
-      colors: [
-        { name: 'Dark Tan', hex: '#8B6914' },
-        { name: 'Black', hex: '#1A1A1A' },
-        { name: 'Cognac', hex: '#8B4513' },
-      ],
-    },
-    tags: ['passport', 'travel', 'accessory', 'full-grain'],
-    isBestSeller: false,
+    name: 'Koyun Derisi Kartlık',
+    nameEn: 'Sheepskin Card Holder',
+    slug: 'koyun-derisi-kartlik',
+    category: 'cuzdan',
+    price: 220,
+    shortDescription: 'Ultra ince koyun derisi kartlık. 4–6 kart kapasiteli, ön cep için tasarlanmış.',
+    shortDescriptionEn: 'Ultra-slim sheepskin card holder. 4–6 card capacity, designed for the front pocket.',
+    longDescription: 'Sadece 4 mm kalınlığıyla bu kartlık, ön cepde neredeyse hissedilmez. Koyun derisinin doğal esnekliği kart çıkarmayı kolaylaştırır.',
+    materials: ['Tam grain koyun derisi', 'El dikişi'],
+    dimensions: '10×7 cm',
+    weight: '25 g',
+    images: ['/images/products/kartlik-02.jpg', '/images/products/kartlik-02.jpg'],
+    variants: { colors: [{ name: 'Taba', hex: '#B8860B' }, { name: 'Siyah', hex: '#1A1A1A' }, { name: 'Bordo', hex: '#722F37' }, { name: 'Naturel', hex: '#D4A96A' }, { name: 'Koyu Yeşil', hex: '#2D4A3E' }] },
+    tags: ['cuzdan', 'kartlik', 'koyun', 'ince'],
+    isBestSeller: true,
     isFeatured: false,
     rating: 4.8,
-    reviewCount: 143,
-    careInstructions:
-      'Wipe clean with a damp cloth. Apply leather balm to keep supple during long trips.',
+    reviewCount: 189,
+    careInstructions: 'Hafif nemli bezle silin. Deri kremi gerektirmez.',
+  },
+
+  // ── KEMER ────────────────────────────────────────────────────────────────────
+  {
+    id: '009',
+    name: 'El Yapımı Dana Deri Kemer',
+    nameEn: 'Handmade Full-Grain Cowhide Belt',
+    slug: 'el-yapimi-dana-deri-kemer',
+    category: 'kemer',
+    price: 380,
+    shortDescription: 'Full-grain dana derisinden el yapımı kemer. Pirinç toka, kenar perdah ile bitirilmiş.',
+    shortDescriptionEn: 'Handmade full-grain cowhide belt. Solid brass buckle, burnished edge finish.',
+    longDescription: 'Tek parça full-grain dana derisinden kesilip elle şekillendirilir. Pirinç toka perçinle tutturulmuştur — ayrılmaz. Kenarlar balmumu ile perdahlanır.',
+    materials: ['Full-grain dana derisi (4 mm)', 'Pirinç toka', 'Balmumu kenar perdah'],
+    dimensions: '3.5 cm genişlik — 85/90/95/100/105/110 cm',
+    weight: '200 g',
+    images: ['/images/products/deri-kemer-01.jpg', '/images/products/deri-kemer-02.jpg'],
+    variants: {
+      colors: [{ name: 'Taba', hex: '#B8860B' }, { name: 'Siyah', hex: '#1A1A1A' }, { name: 'Koyu Kahve', hex: '#3E1F00' }],
+      sizes: ['85 cm', '90 cm', '95 cm', '100 cm', '105 cm', '110 cm'],
+    },
+    tags: ['kemer', 'dana', 'full-grain', 'el-yapimi'],
+    isBestSeller: true,
+    isFeatured: true,
+    rating: 4.9,
+    reviewCount: 274,
+    careInstructions: 'Deri bakım yağı ile yılda bir kez besleyin.',
+  },
+  {
+    id: '010',
+    name: 'İnce Koyun Derisi Kemer',
+    nameEn: 'Slim Sheepskin Leather Belt',
+    slug: 'ince-koyun-derisi-kemer',
+    category: 'kemer',
+    price: 290,
+    shortDescription: 'Yumuşak koyun derisinden 2.5 cm ince kemer. Elbise ve smokin ile kullanıma uygun.',
+    shortDescriptionEn: 'Soft sheepskin 2.5 cm slim belt. Suitable for dress trousers and formal wear.',
+    longDescription: 'İnce koyun derisi, gömlek üstü ve elbise pantolonu ile mükemmel uyum sağlar. Resmi davetlerden günlük şık kullanıma kadar geniş bir yelpazede tercih edilir.',
+    materials: ['Tam grain koyun derisi (2.5 mm)', 'Pirinç toka', 'El dikişi kenar'],
+    dimensions: '2.5 cm genişlik — 85/90/95/100/105 cm',
+    weight: '120 g',
+    images: ['/images/products/koyun-kemer-02.jpg', '/images/products/koyun-kemer-02.jpg'],
+    variants: {
+      colors: [{ name: 'Siyah', hex: '#1A1A1A' }, { name: 'Koyu Kahve', hex: '#3E1F00' }, { name: 'Bordo', hex: '#722F37' }],
+      sizes: ['85 cm', '90 cm', '95 cm', '100 cm', '105 cm'],
+    },
+    tags: ['kemer', 'koyun', 'ince', 'resmi'],
+    isBestSeller: false,
+    isFeatured: false,
+    rating: 4.7,
+    reviewCount: 96,
+    careInstructions: 'Hafif deri kremi ile yılda bir kez silin.',
   },
 ]
 
-export const testimonials: Testimonial[] = [
-  {
-    id: 't1',
-    author: 'James R.',
-    location: 'New York, USA',
-    rating: 5,
-    comment:
-      'I have owned a lot of leather jackets. The Midnight Moto is in another category entirely. Six months in and it fits like it was made for me. The hardware is solid, the leather is thick, and the stitching is flawless. Worth every cent.',
-    product: 'Midnight Moto Jacket',
-    date: '2024-11-12',
-    verified: true,
-  },
-  {
-    id: 't2',
-    author: 'Marcus T.',
-    location: 'London, UK',
-    rating: 5,
-    comment:
-      'The Heritage Duffle has been on three continents with me. The leather has darkened beautifully and the stitching looks as tight as the day it arrived. This is what "investment piece" actually means.',
-    product: 'Heritage Duffle',
-    date: '2024-10-03',
-    verified: true,
-  },
-  {
-    id: 't3',
-    author: 'Daniel K.',
-    location: 'Berlin, Germany',
-    rating: 5,
-    comment:
-      'Two years with the Cordovan Bifold and it is developing the most insane mirror patina. My grandfather carried a shell cordovan wallet until he died. Now I understand why.',
-    product: 'Cordovan Bifold',
-    date: '2025-01-20',
-    verified: true,
-  },
-  {
-    id: 't4',
-    author: 'Oliver M.',
-    location: 'Sydney, Australia',
-    rating: 5,
-    comment:
-      'The craftsmanship is extraordinary. Every detail considered, nothing wasted. BLACKHIDE makes things that are meant to last — and they do.',
-    product: 'Garrison Belt',
-    date: '2025-02-08',
-    verified: true,
-  },
-]
-
+// ─── KOLEKSİYONLAR ───────────────────────────────────────────────────────────
 export const collections = [
-  {
-    name: 'Jackets',
-    slug: 'jackets',
-    description: 'Full-grain leather jackets built for a lifetime.',
-    image: '/images/collections/jackets.jpg',
-    count: 3,
-  },
-  {
-    name: 'Bags',
-    slug: 'bags',
-    description: 'Structured leather bags for every journey.',
-    image: '/images/collections/bags.jpg',
-    count: 5,
-  },
-  {
-    name: 'Wallets & Cardholders',
-    slug: 'wallets',
-    description: 'Shell cordovan and full-grain essentials.',
-    image: '/images/collections/wallets.jpg',
-    count: 4,
-  },
+  { name: 'Ham Deri & Post', slug: 'ham-deri', description: 'Koyun postu, dana ve koyun ham derisi.', image: '/images/collections/jackets.jpg', count: 4 },
+  { name: 'El Yapımı Çanta', slug: 'canta', description: 'Full-grain deri omuz çantası, evrak çantası.', image: '/images/collections/bags.jpg', count: 2 },
+  { name: 'Cüzdan & Kemer', slug: 'cuzdan', description: 'Bifold cüzdan, kartlık, deri kemer.', image: '/images/collections/wallets.jpg', count: 4 },
 ]
 
+// ─── HELPERS ─────────────────────────────────────────────────────────────────
 export function getProductBySlug(slug: string): Product | undefined {
   return products.find((p) => p.slug === slug)
 }
-
 export function getRelatedProducts(product: Product, limit = 4): Product[] {
-  return products
-    .filter((p) => p.id !== product.id && p.category === product.category)
-    .slice(0, limit)
-    .concat(
-      products
-        .filter((p) => p.id !== product.id && p.category !== product.category)
-        .slice(0, Math.max(0, limit - products.filter((p) => p.id !== product.id && p.category === product.category).length))
-    )
-    .slice(0, limit)
+  return products.filter((p) => p.id !== product.id && p.category === product.category).slice(0, limit)
+}
+export function getBestSellers(limit = 4): Product[] {
+  return products.filter((p) => p.isBestSeller).slice(0, limit)
+}
+export function getFeaturedProducts(limit = 8): Product[] {
+  return products.filter((p) => p.isFeatured).slice(0, limit)
 }
 
-export function getBestSellers(): Product[] {
-  return products.filter((p) => p.isBestSeller)
-}
-
-export function getFeaturedProducts(): Product[] {
-  return products.filter((p) => p.isFeatured)
-}
+// ─── TESTİMONYALS ─────────────────────────────────────────────────────────────
+export const testimonials: Testimonial[] = [
+  { id: 't1', author: 'Murat K.', location: 'İstanbul', rating: 5, comment: 'Aldığım dana derisi çantayı 3 yıldır her gün kullanıyorum. Rengi açıldı, patinalandı ama hiç eskimedi. Kalitesi gerçekten farklı.', product: 'El Yapımı Dana Deri Omuz Çantası', date: '2024-11-18', verified: true },
+  { id: 't2', author: 'Selin A.', location: 'Ankara', rating: 5, comment: 'Koyun postu şömüne önünde harika duruyor. Tüylerin yoğunluğu ve yumuşaklığı beklentimin çok üzerindeydi. Teşekkürler.', product: 'Doğal Koyun Postu', date: '2025-01-07', verified: true },
+  { id: 't3', author: 'Emre T.', location: 'İzmir', rating: 5, comment: 'Bifold cüzdan 2 yıldır bende, dikişi açılmadı tek bir yer bile. Ham deri de aldım proje için, kalitesi gerçekten birinci sınıf.', product: 'El Yapımı Deri Bifold Cüzdan', date: '2025-02-22', verified: true },
+  { id: 't4', author: 'Ayşe D.', location: 'Bursa', rating: 5, comment: 'Dana deri kemerimi bir dükkânda görmüştüm, fiyatı çok fazlaydı. Burada daha kaliteli aldım. Pirinç toka fevkalade.', product: 'El Yapımı Dana Deri Kemer', date: '2025-03-10', verified: true },
+]

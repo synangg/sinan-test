@@ -6,18 +6,21 @@ import { ArrowRight } from 'lucide-react'
 import { SectionTitle } from '@/components/ui/SectionTitle'
 import { ProductCard } from '@/components/shop/ProductCard'
 import { getBestSellers } from '@/data/products'
+import { useLang } from '@/context/LanguageContext'
 
 export function BestSellers() {
   const bestSellers = getBestSellers()
+  const { t } = useLang()
+  const b = t.bestSellers
 
   return (
     <section className="py-20 md:py-28 bg-[#0A0806]">
       <div className="container-luxury">
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-14 md:mb-16">
           <SectionTitle
-            label="Best Sellers"
-            title="The Favourites"
-            subtitle="The pieces our customers keep coming back for."
+            label={b.label}
+            title={b.title}
+            subtitle={b.subtitle}
             align="left"
             className="max-w-lg"
           />
@@ -25,7 +28,7 @@ export function BestSellers() {
             href="/shop"
             className="inline-flex items-center gap-2 font-sans text-xs tracking-[0.2em] uppercase text-gold hover:text-gold-light transition-colors duration-300 group flex-shrink-0"
           >
-            View All
+            {b.viewAll}
             <ArrowRight size={12} className="transition-transform duration-300 group-hover:translate-x-1" />
           </Link>
         </div>

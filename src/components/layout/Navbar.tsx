@@ -4,19 +4,21 @@ import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { ShoppingBag, Menu, X, Search } from 'lucide-react'
 import { useCart } from '@/context/CartContext'
+import { useLang } from '@/context/LanguageContext'
 import { motion, AnimatePresence } from 'framer-motion'
-
-const navLinks = [
-  { label: 'Shop', href: '/shop' },
-  { label: 'Craft', href: '/about' },
-  { label: 'Journal', href: '/about#journal' },
-  { label: 'Contact', href: '/contact' },
-]
 
 export function Navbar() {
   const { itemCount, openCart } = useCart()
+  const { lang, setLang, t } = useLang()
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
+
+  const navLinks = [
+    { label: t.nav.shop, href: '/shop' },
+    { label: t.nav.craft, href: '/about' },
+    { label: t.nav.journal, href: '/about#journal' },
+    { label: t.nav.contact, href: '/contact' },
+  ]
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 60)
@@ -24,7 +26,6 @@ export function Navbar() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
-  // Prevent scroll when menu is open
   useEffect(() => {
     document.body.style.overflow = menuOpen ? 'hidden' : ''
     return () => { document.body.style.overflow = '' }
@@ -74,6 +75,17 @@ export function Navbar() {
 
             {/* Actions */}
             <div className="flex items-center gap-4">
+              {/* Language Toggle */}
+              <button
+                onClick={() => setLang(lang === 'tr' ? 'en' : 'tr')}
+                className="hidden md:flex items-center gap-1 font-sans text-[10px] tracking-[0.2em] uppercase border border-white/15 text-cream/50 hover:border-gold/50 hover:text-gold transition-all duration-300 px-2.5 py-1.5"
+                aria-label="Switch language"
+              >
+                <span className={lang === 'tr' ? 'text-gold' : 'text-cream/30'}>TR</span>
+                <span className="text-cream/20">·</span>
+                <span className={lang === 'en' ? 'text-gold' : 'text-cream/30'}>EN</span>
+              </button>
+
               <button
                 className="hidden md:flex text-cream/60 hover:text-cream transition-colors duration-300"
                 aria-label="Search"
@@ -125,10 +137,19 @@ export function Navbar() {
                 </motion.div>
               ))}
             </nav>
-            <div className="mt-auto">
+            <div className="mt-auto flex items-center justify-between">
               <p className="font-sans text-xs text-cream/30 tracking-widest uppercase">
-                Handcrafted Since 2012
+                {t.nav.since}
               </p>
+              {/* Mobile language toggle */}
+              <button
+                onClick={() => setLang(lang === 'tr' ? 'en' : 'tr')}
+                className="flex items-center gap-1 font-sans text-xs tracking-[0.2em] border border-white/15 text-cream/50 px-3 py-2"
+              >
+                <span className={lang === 'tr' ? 'text-gold' : 'text-cream/30'}>TR</span>
+                <span className="text-cream/20 mx-1">·</span>
+                <span className={lang === 'en' ? 'text-gold' : 'text-cream/30'}>EN</span>
+              </button>
             </div>
           </motion.div>
         )}
