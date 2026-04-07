@@ -249,6 +249,92 @@ export const translations = {
   },
 }
 
+// ─── ABOUT PAGE ──────────────────────────────────────────────────────────────
+export const aboutTranslations = {
+  tr: {
+    meta: { title: 'Hakkımızda', description: 'MASTERLEATHER\'ın hikâyesi — elle yapılan, ömür boyu dayanıklı gerçek deri ürünler.' },
+    hero: {
+      label: 'Hikâyemiz',
+      title1: 'Dayanıklı',
+      title2: 'Şeyler Yapıyoruz.',
+      desc: 'MASTERLEATHER, tek bir inançla kuruldu: çevre için ve cüzdanınız için yapabileceğiniz en iyi şey, bir kez iyi yapılmış bir şey satın almaktır. Cüzdanla başladık. Sonra kemerler. Sonra çantalar. Her kategoride her tasarım sorusunun cevabı aynı oldu: yirmi yıl sonra bu nasıl görünür?',
+    },
+    philosophy: {
+      label: 'Felsefemiz',
+      title1: 'Sonsuza Kadar',
+      title2: 'Saklayacağınız Şeyler Yapıyoruz.',
+      p1: 'Deri ürünleri sektörü, "kalite" kelimesini kullanan ve ardından mevcut her köşeyi kesen markalarla dolu. Düzeltilmiş grain deri. Makine dikişi. Yapıştırılmış dikişler. Bir yılda kararan nikel aksesuar.',
+      p2: 'MASTERLEATHER\'ı saçma olmayan bir fiyata aradığımızı bulamadığımız için kurduk. Tam grain deri, elle eyer dikişi, sağlam pirinç aksesuar — donanımını ciddiye alan herkese uygun.',
+      p3: 'Her parçayı hâlâ 2012\'de yaptığımız gibi yapıyoruz. Aletler daha iyi. Kalıplar geliştirildi. Standart değişmedi.',
+    },
+    foundedBadge: 'Kuruluş',
+    values: {
+      label: 'Değerlerimiz',
+      title: 'MASTERLEATHER Standardı',
+      items: [
+        { title: 'Kısa Yol Yok', description: 'Her dikişi eyer dikişiyle yapıyoruz. Her kenarı eğip perdahlıyoruz. Her deriyi inceliyoruz. Bu zaman alır. Buna değer.' },
+        { title: 'Dürüst Malzeme', description: 'Yalnızca tam grain ve kabuk korduvan deriler kullanıyoruz. Yapıştırılmış deri yok. Üst grain yok. PU yok. Her zaman gerçeği.' },
+        { title: 'Sorumlu Tedarik', description: 'Postlarımız bizzat ziyaret ettiğimiz az sayıda tabakhaneden geliyor. Derilerimizin nereden geldiğini biliyoruz.' },
+        { title: 'Dayanıklılık İçin Fiyatlandırma', description: '20 yıl dayanan 400$ değerinde bir ceket mevcut en iyi değerdir. Ürünlerimizi gerçek zanaat maliyetini yansıtacak şekilde fiyatlandırıyoruz.' },
+      ],
+    },
+    workshop: {
+      label: 'Atölye',
+      title1: 'Dört Zanaatkâr.',
+      title2: 'Her Parça, Her Seferinde.',
+      desc: 'Dışarıya üretim yaptırmıyoruz. Makine ekleyerek büyümüyoruz. Her MASTERLEATHER parçası aynı dört çift elden geçer: deri kesici, eyer dikişçisi, kenar bitişçisi ve kalite denetçisi. Kalıplarımızı fabrikalara lisanslamak için fırsatlar sunuldu. Her seferinde reddettik.',
+      cta: 'Koleksiyonu Gör',
+    },
+    sustainability: {
+      label: 'Sürdürülebilirlik',
+      title: 'En sürdürülebilir ürün, asla atmadığınız üründür.',
+      p1: 'Deri, et endüstrisinin bir yan ürünüdür. Kullandığımız postlar aksi halde atılacaktı. Mümkün olduğunda krom içermeyen, bitkisel tabanlı tabaklama süreçleri kullanan tabakhanelerle çalışıyoruz ve yalnızca sorumlu atık su yönetimini kanıtlayabilen tedarikçilerle ilişkimizi sürdürüyoruz.',
+      p2: 'Bunların hepsinden daha önemlisi: çevresel açıdan en sorumlu tercih, beş ucuz şey alıp çöpe atmak yerine bir iyi şey alıp otuz yıl saklamaktır. Biz o bir iyi şeyi yapıyoruz.',
+    },
+  },
+  en: {
+    meta: { title: 'Our Craft', description: 'The story behind MASTERLEATHER — genuine leather goods made by hand, built to last a lifetime.' },
+    hero: {
+      label: 'The Story',
+      title1: 'We Make Things',
+      title2: 'That Last.',
+      desc: 'MASTERLEATHER was founded in 2012 with one belief: that the best thing you can do for the environment — and your wallet — is buy something well-made, once. We started with wallets. Then belts. Then bags. Then jackets. In every category, the answer to every design question has been the same: what will this look like in twenty years?',
+    },
+    philosophy: {
+      label: 'Our Philosophy',
+      title1: 'We Exist to Make Things',
+      title2: 'You Keep Forever.',
+      p1: 'The leather goods industry is full of brands that use the word "quality" and then cut every corner available. Corrected-grain leather. Machine stitching. Glued seams. Nickel hardware that tarnishes in a year.',
+      p2: 'We started MASTERLEATHER because we could not find what we were looking for at a price that was not ludicrous. Full-grain leather, saddle-stitched by hand, with solid brass hardware — available to anyone who takes their gear seriously.',
+      p3: 'We still make each piece the same way we did in 2012. The tools are better. The patterns have been refined. The standard has not moved.',
+    },
+    foundedBadge: 'Founded',
+    values: {
+      label: 'What We Stand For',
+      title: 'The MASTERLEATHER Standard',
+      items: [
+        { title: 'No Shortcuts', description: 'We saddle-stitch every seam. We bevel and burnish every edge. We inspect every hide. This adds time. It is worth it.' },
+        { title: 'Honest Materials', description: 'We use full-grain and shell cordovan leathers only. No bonded leather. No top-grain. No PU. The real thing, always.' },
+        { title: 'Responsible Sourcing', description: 'Our hides come from a small number of tanneries we have visited personally. We know where our leather comes from.' },
+        { title: 'Priced to Last', description: 'A $400 jacket that lasts 20 years is the best value available. We price our goods to reflect real craft, not to inflate margins.' },
+      ],
+    },
+    workshop: {
+      label: 'The Workshop',
+      title1: 'Four Craftspeople.',
+      title2: 'Every Piece, Every Time.',
+      desc: 'We do not outsource. We do not scale by adding machines. Every MASTERLEATHER piece passes through the same four pairs of hands: the leather cutter, the saddle stitcher, the edge finisher, and the quality inspector. We have been offered the opportunity to license our patterns to factories. We have declined, every time.',
+      cta: 'Shop the Collection',
+    },
+    sustainability: {
+      label: 'Sustainability',
+      title: 'The most sustainable product is one you never throw away.',
+      p1: 'Leather is a by-product of the meat industry. The hides we use would otherwise be discarded. We work with tanneries that use chrome-free, vegetable-based tanning processes where possible, and we maintain relationships only with suppliers who can demonstrate responsible wastewater management.',
+      p2: 'More than any of that: the most environmentally responsible choice is to buy one good thing and keep it for thirty years instead of buying five cheap things that end up in landfill. We make the one good thing.',
+    },
+  },
+}
+
 // ─── EK BÖLÜMLER ─────────────────────────────────────────────────────────────
 export const extraTranslations = {
   tr: {
