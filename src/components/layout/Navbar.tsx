@@ -57,7 +57,7 @@ export function Navbar() {
               className="font-serif text-xl md:text-2xl tracking-[0.15em] text-cream hover:text-gold transition-colors duration-300 absolute left-1/2 -translate-x-1/2 md:static md:left-auto md:translate-x-0"
               onClick={() => setMenuOpen(false)}
             >
-              BLACKHIDE
+              MASTERLEATHER
             </Link>
 
             {/* Desktop nav */}
