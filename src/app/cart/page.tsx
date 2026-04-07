@@ -3,11 +3,14 @@
 import Link from 'next/link'
 import { Trash2, Plus, Minus, ShoppingBag, ArrowLeft, ArrowRight } from 'lucide-react'
 import { useCart } from '@/context/CartContext'
+import { useLang } from '@/context/LanguageContext'
 import { PlaceholderImage } from '@/components/ui/PlaceholderImage'
 import { motion, AnimatePresence } from 'framer-motion'
 
 export default function CartPage() {
   const { items, subtotal, removeItem, updateQuantity, clearCart } = useCart()
+  const { t } = useLang()
+  const c = t.cart
 
   const shipping = subtotal >= 150 ? 0 : 12.99
   const total = subtotal + shipping
@@ -16,11 +19,10 @@ export default function CartPage() {
     <div className="pt-24 md:pt-28 pb-20 md:pb-28 min-h-screen">
       {/* Header */}
       <div className="container-luxury py-10 border-b border-white/8">
-        <h1 className="font-serif text-3xl md:text-4xl text-cream">Your Cart</h1>
+        <h1 className="font-serif text-3xl md:text-4xl text-cream">{c.title}</h1>
         {items.length > 0 && (
           <p className="font-sans text-sm text-cream/40 mt-2">
-            {items.reduce((s, i) => s + i.quantity, 0)} item
-            {items.reduce((s, i) => s + i.quantity, 0) !== 1 ? 's' : ''}
+            {items.reduce((s, i) => s + i.quantity, 0)} {t.shop.products}
           </p>
         )}
       </div>
@@ -30,9 +32,9 @@ export default function CartPage() {
           <div className="text-center py-20 flex flex-col items-center gap-6">
             <ShoppingBag size={56} className="text-cream/10" />
             <div>
-              <h2 className="font-serif text-2xl text-cream/40 mb-2">Your cart is empty</h2>
+              <h2 className="font-serif text-2xl text-cream/40 mb-2">{c.empty}</h2>
               <p className="font-sans text-sm text-cream/25">
-                Discover handcrafted leather goods built to last.
+                {c.emptySubtitle}
               </p>
             </div>
             <Link
@@ -40,7 +42,7 @@ export default function CartPage() {
               className="inline-flex items-center gap-2 px-8 py-4 bg-gold text-obsidian font-sans font-semibold text-xs tracking-[0.25em] uppercase hover:bg-gold-light transition-all duration-300"
             >
               <ArrowLeft size={13} />
-              Browse Collection
+              {c.browse}
             </Link>
           </div>
         ) : (
@@ -53,13 +55,13 @@ export default function CartPage() {
                   className="inline-flex items-center gap-2 font-sans text-xs tracking-[0.15em] uppercase text-cream/40 hover:text-cream transition-colors"
                 >
                   <ArrowLeft size={12} />
-                  Continue Shopping
+                  {c.continueShopping}
                 </Link>
                 <button
                   onClick={clearCart}
                   className="font-sans text-xs text-cream/25 hover:text-cream/60 transition-colors uppercase tracking-wider"
                 >
-                  Clear Cart
+                  {c.clearCart}
                 </button>
               </div>
 
@@ -170,18 +172,18 @@ export default function CartPage() {
             {/* Order summary */}
             <div>
               <div className="bg-[#141210] border border-white/8 p-6 md:p-8 sticky top-28">
-                <h2 className="font-serif text-xl text-cream mb-6">Order Summary</h2>
+                <h2 className="font-serif text-xl text-cream mb-6">{c.orderSummary}</h2>
 
                 <div className="space-y-3 mb-6">
                   <div className="flex justify-between">
-                    <span className="font-sans text-sm text-cream/50">Subtotal</span>
+                    <span className="font-sans text-sm text-cream/50">{c.subtotal}</span>
                     <span className="font-sans text-sm text-cream">${subtotal.toFixed(2)}</span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="font-sans text-sm text-cream/50">Shipping</span>
+                    <span className="font-sans text-sm text-cream/50">{c.shipping}</span>
                     <span className="font-sans text-sm text-cream">
                       {shipping === 0 ? (
-                        <span className="text-gold">Free</span>
+                        <span className="text-gold">{c.freeShipping}</span>
                       ) : (
                         `$${shipping.toFixed(2)}`
                       )}
@@ -189,14 +191,14 @@ export default function CartPage() {
                   </div>
                   {shipping > 0 && (
                     <p className="font-sans text-xs text-cream/30">
-                      Add ${(150 - subtotal).toFixed(2)} more for free shipping
+                      ${(150 - subtotal).toFixed(2)} {c.freeShippingNote}
                     </p>
                   )}
                 </div>
 
                 <div className="border-t border-white/8 pt-4 mb-6">
                   <div className="flex justify-between items-baseline">
-                    <span className="font-sans text-sm text-cream/70">Total</span>
+                    <span className="font-sans text-sm text-cream/70">{c.total}</span>
                     <span className="font-serif text-2xl text-cream">${total.toFixed(2)}</span>
                   </div>
                 </div>
@@ -205,16 +207,16 @@ export default function CartPage() {
                 <div className="flex gap-0 mb-6">
                   <input
                     type="text"
-                    placeholder="Promo code"
+                    placeholder={c.promoCode}
                     className="flex-1 bg-obsidian border border-white/10 px-4 py-3 text-cream placeholder:text-cream/20 font-sans text-xs focus:outline-none focus:border-gold/50 transition-colors"
                   />
                   <button className="px-4 border border-l-0 border-white/10 font-sans text-xs tracking-widest uppercase text-cream/50 hover:text-cream hover:border-cream/30 transition-all">
-                    Apply
+                    {c.apply}
                   </button>
                 </div>
 
                 <button className="w-full flex items-center justify-center gap-2 bg-gold text-obsidian font-sans font-semibold text-xs tracking-[0.25em] uppercase py-4 hover:bg-gold-light transition-all duration-300 active:scale-[0.98]">
-                  Proceed to Checkout
+                  {c.checkout}
                   <ArrowRight size={13} />
                 </button>
 
@@ -230,7 +232,7 @@ export default function CartPage() {
                 </div>
 
                 <p className="font-sans text-[10px] text-cream/20 text-center mt-3 leading-relaxed">
-                  30-day free returns · Secure checkout · Lifetime repairs
+                  {c.guarantee}
                 </p>
               </div>
             </div>

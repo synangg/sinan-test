@@ -50,26 +50,6 @@ export default function ShopPage({ searchParams }: ShopPageProps) {
 
   return (
     <div className="pt-24 md:pt-28 pb-20 md:pb-28 min-h-screen">
-      {/* Page header */}
-      <div className="container-luxury mb-12 md:mb-14">
-        <div className="border-b border-white/8 pb-10">
-          <span className="font-sans text-xs tracking-[0.25em] uppercase text-gold font-medium block mb-4">
-            The Collection
-          </span>
-          <h1 className="font-serif text-4xl md:text-5xl text-cream">
-            {category && category !== 'all'
-              ? category.charAt(0).toUpperCase() + category.slice(1).replace('-', ' ')
-              : 'All Products'}
-          </h1>
-          {(!category || category === 'all') && (
-            <p className="font-sans text-sm text-cream/50 mt-3 max-w-lg leading-relaxed">
-              Every piece hand-cut, hand-stitched, and built from the finest full-grain and shell
-              cordovan leathers available.
-            </p>
-          )}
-        </div>
-      </div>
-
       <div className="container-luxury">
         <Suspense fallback={null}>
           <ShopContent
