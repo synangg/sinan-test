@@ -1,10 +1,11 @@
 'use client'
 
-import { motion, useScroll, useTransform } from 'framer-motion'
+import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion'
 import Link from 'next/link'
 import Image from 'next/image'
 import { ArrowRight } from 'lucide-react'
 import { useLang } from '@/context/LanguageContext'
+import { useEffect, useState } from 'react'
 
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },
@@ -14,6 +15,13 @@ const fadeUp = {
     transition: { duration: 0.9, ease: [0.25, 0.46, 0.45, 0.94], delay },
   }),
 }
+
+const heroImages = [
+  { src: '/images/craftsmanship-closeup.jpg', alt: 'Deri işçiliği' },
+  { src: '/images/products/dana-derisi-bordo-01.jpg', alt: 'Ham dana derisi bordo' },
+  { src: '/images/products/dana-derisi-taba-01.jpg', alt: 'Ham dana derisi taba' },
+  { src: '/images/leather-bag-lifestyle.jpg', alt: 'El yapımı deri çanta' },
+]
 
 function RotatingRing({ rotate, text }: { rotate: import('framer-motion').MotionValue<number>; text: string }) {
   return (
@@ -50,20 +58,58 @@ export function Hero() {
   const { t } = useLang()
   const h = t.hero
 
+  const [current, setCurrent] = useState(0)
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % heroImages.length)
+    }, 5000)
+    return () => clearInterval(timer)
+  }, [])
+
   const ringText = t.nav.since === 'Handcrafted Since 2012'
     ? 'BLACKHIDE · HANDCRAFTED LEATHER ·      BLACKHIDE · HANDCRAFTED LEATHER ·      '
     : 'BLACKHIDE · EL YAPIMI DERİ ·      BLACKHIDE · EL YAPIMI DERİ ·      '
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background */}
+      {/* Background Slider */}
       <div className="absolute inset-0">
-        <Image src="/images/craftsmanship-closeup.jpg" alt="BLACKHIDE Hero" fill priority className="object-cover" sizes="100vw" />
+        <AnimatePresence mode="sync">
+          <motion.div
+            key={current}
+            className="absolute inset-0"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 1.2, ease: 'easeInOut' }}
+          >
+            <Image
+              src={heroImages[current].src}
+              alt={heroImages[current].alt}
+              fill
+              priority={current === 0}
+              className="object-cover"
+              sizes="100vw"
+            />
+          </motion.div>
+        </AnimatePresence>
         <div className="absolute inset-0 bg-gradient-to-br from-[#0D0B08]/70 via-[#1C1208]/50 to-[#0A0806]/70" />
         <div className="absolute inset-0 opacity-15" style={{
           backgroundImage: `repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(196,148,58,0.03) 2px,rgba(196,148,58,0.03) 4px),repeating-linear-gradient(90deg,transparent,transparent 4px,rgba(255,255,255,0.01) 4px,rgba(255,255,255,0.01) 8px)`
         }} />
         <div className="absolute inset-0" style={{ background: 'radial-gradient(ellipse at center, transparent 30%, rgba(10,8,6,0.7) 100%)' }} />
+      </div>
+
+      {/* Slide indicators */}
+      <div className="absolute bottom-36 left-1/2 -translate-x-1/2 z-20 flex items-center gap-2">
+        {heroImages.map((_, i) => (
+          <button
+            key={i}
+            onClick={() => setCurrent(i)}
+            className={`transition-all duration-300 rounded-full ${i === current ? 'w-6 h-1.5 bg-gold' : 'w-1.5 h-1.5 bg-cream/30 hover:bg-cream/50'}`}
+          />
+        ))}
       </div>
 
       {/* Decorative lines */}
