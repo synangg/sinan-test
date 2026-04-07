@@ -130,10 +130,10 @@ export const translations = {
       craft: 'Craft',
       journal: 'Journal',
       contact: 'Contact',
-      since: 'Handcrafted Since 2012',
+      since: 'Handcrafted Since 2024',
     },
     hero: {
-      badge: 'Handcrafted Since 2012',
+      badge: 'Handcrafted Since 2024',
       title1: 'Crafted for',
       title2: 'Those Who',
       title3: 'Endure.',

@@ -1,6 +1,6 @@
 'use client'
 
-import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
 import Link from 'next/link'
 import Image from 'next/image'
 import { ArrowRight } from 'lucide-react'
@@ -23,38 +23,8 @@ const heroImages = [
   { src: '/images/leather-bag-lifestyle.jpg', alt: 'El yapımı deri çanta' },
 ]
 
-function RotatingRing({ rotate, text }: { rotate: import('framer-motion').MotionValue<number>; text: string }) {
-  return (
-    <motion.div style={{ rotate }} className="absolute inset-0 pointer-events-none">
-      <svg viewBox="0 0 200 200" className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <path id="ringPath" d="M 100,100 m -90,0 a 90,90 0 1,1 180,0 a 90,90 0 1,1 -180,0" />
-        </defs>
-        <circle cx="100" cy="100" r="90" fill="none" stroke="rgba(196,148,58,0.25)" strokeWidth="0.5" />
-        {Array.from({ length: 24 }).map((_, i) => {
-          const angle = (i / 24) * 2 * Math.PI
-          const x1 = 100 + 87 * Math.cos(angle)
-          const y1 = 100 + 87 * Math.sin(angle)
-          const x2 = 100 + 90 * Math.cos(angle)
-          const y2 = 100 + 90 * Math.sin(angle)
-          return (
-            <line key={i} x1={x1} y1={y1} x2={x2} y2={y2}
-              stroke={i % 6 === 0 ? 'rgba(196,148,58,0.7)' : 'rgba(196,148,58,0.3)'}
-              strokeWidth={i % 6 === 0 ? '1.5' : '0.8'}
-            />
-          )
-        })}
-        <text fontSize="7.5" fill="rgba(196,148,58,0.55)" letterSpacing="4">
-          <textPath href="#ringPath" startOffset="0%">{text}</textPath>
-        </text>
-      </svg>
-    </motion.div>
-  )
-}
 
 export function Hero() {
-  const { scrollY } = useScroll()
-  const rotate = useTransform(scrollY, [0, 1200], [0, 360])
   const { t } = useLang()
   const h = t.hero
 
@@ -66,10 +36,6 @@ export function Hero() {
     }, 5000)
     return () => clearInterval(timer)
   }, [])
-
-  const ringText = t.nav.since === 'Handcrafted Since 2012'
-    ? 'MASTERLEATHER · HANDCRAFTED LEATHER ·      MASTERLEATHER · HANDCRAFTED LEATHER ·      '
-    : 'MASTERLEATHER · EL YAPIMI DERİ ·      MASTERLEATHER · EL YAPIMI DERİ ·      '
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
@@ -122,16 +88,6 @@ export function Hero() {
       {/* Content */}
       <div className="relative z-10 container-luxury text-center">
         <motion.div initial="hidden" animate="visible" className="flex flex-col items-center gap-6 md:gap-8 max-w-4xl mx-auto">
-
-          {/* Dönen halka badge */}
-          <motion.div variants={fadeUp} custom={0.0} className="relative w-36 h-36 flex items-center justify-center mb-2">
-            <RotatingRing rotate={rotate} text={ringText} />
-            <div className="relative z-10 flex flex-col items-center justify-center w-16 h-16">
-              <span className="font-serif text-[10px] tracking-[0.3em] uppercase text-gold leading-none">B</span>
-              <div className="w-6 h-px bg-gold/50 my-1" />
-              <span className="font-sans text-[7px] tracking-[0.25em] uppercase text-cream/50 leading-none">HIDE</span>
-            </div>
-          </motion.div>
 
           <motion.span variants={fadeUp} custom={0.1} className="font-sans text-xs tracking-[0.35em] uppercase text-gold font-medium">
             {h.badge}
