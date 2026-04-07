@@ -58,7 +58,7 @@ export function Hero() {
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0">
-        <Image src="/images/hero-leather-brand.jpg" alt="BLACKHIDE Hero" fill priority className="object-cover" sizes="100vw" />
+        <Image src="/images/craftsmanship-closeup.jpg" alt="BLACKHIDE Hero" fill priority className="object-cover" sizes="100vw" />
         <div className="absolute inset-0 bg-gradient-to-br from-[#0D0B08]/70 via-[#1C1208]/50 to-[#0A0806]/70" />
         <div className="absolute inset-0 opacity-15" style={{
           backgroundImage: `repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(196,148,58,0.03) 2px,rgba(196,148,58,0.03) 4px),repeating-linear-gradient(90deg,transparent,transparent 4px,rgba(255,255,255,0.01) 4px,rgba(255,255,255,0.01) 8px)`
