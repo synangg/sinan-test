@@ -46,13 +46,13 @@ export default function ContactPage() {
                       Email
                     </p>
                     <a
-                      href="mailto:hello@blackhide.com"
+                      href="mailto:hello@masterleather.com"
                       className="font-sans text-sm text-cream hover:text-gold transition-colors"
                     >
-                      hello@blackhide.com
+                      hello@masterleather.com
                     </a>
                     <p className="font-sans text-xs text-cream/30 mt-0.5">
-                      For orders: orders@blackhide.com
+                      For orders: orders@masterleather.com
                     </p>
                   </div>
                 </div>

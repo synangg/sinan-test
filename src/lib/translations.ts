@@ -38,7 +38,7 @@ export const translations = {
       label: 'Süreç',
       title1: 'El ile Yapılır.',
       title2: 'Her Seferinde.',
-      subtitle: 'Hiç dikiş makinemiz olmadı. Her BLACKHIDE parçası aynı dört elden geçer — deri kesici, dikişçi, kenar bitişçi ve kalite denetçisi. Bu bilinçli bir tercih.',
+      subtitle: 'Hiç dikiş makinemiz olmadı. Her MASTERLEATHER parçası aynı dört elden geçer — deri kesici, dikişçi, kenar bitişçi ve kalite denetçisi. Bu bilinçli bir tercih.',
       yearsLabel: 'Yıllık\nDeneyim',
       learnMore: 'Sürecimiz Hakkında',
       steps: [
@@ -161,7 +161,7 @@ export const translations = {
       label: 'The Process',
       title1: 'Made by Hand.',
       title2: 'Every Time.',
-      subtitle: 'We have never owned a stitching machine. Every BLACKHIDE piece passes through the same four hands — the leather cutter, the stitcher, the edge finisher, and the quality inspector. That is by design.',
+      subtitle: 'We have never owned a stitching machine. Every MASTERLEATHER piece passes through the same four hands — the leather cutter, the stitcher, the edge finisher, and the quality inspector. That is by design.',
       yearsLabel: 'Years of\nPractice',
       learnMore: 'Learn About Our Process',
       steps: [
@@ -253,7 +253,7 @@ export const translations = {
 export const extraTranslations = {
   tr: {
     why: {
-      label: 'Neden BLACKHIDE',
+      label: 'Neden MASTERLEATHER',
       title: 'Fark Yaratan.',
       titleEm: 'Dürüst Fiyat.',
       pillars: [
@@ -265,7 +265,7 @@ export const extraTranslations = {
       badges: ['500₺ üzeri ücretsiz kargo', '30 gün iade', 'Ömür boyu tamir garantisi', 'Güvenli ödeme'],
     },
     lifestyle: {
-      label: 'BLACKHIDE Standardı',
+      label: 'MASTERLEATHER Standardı',
       quote: '"Deri, onu taşıyanın hikâyesini anlatır."',
       subtitle: 'Her çizik, kıvrım ve koyulaşan kenar gerçek kullanımın izdir. Yaşadığınız hayatı ödüllendiren deri üretiyoruz.',
       cta: 'Hikâyeni Başlat',
@@ -283,13 +283,13 @@ export const extraTranslations = {
       placeholder: 'eposta@adresin.com',
       subscribe: 'Abone Ol',
       successTitle: 'Aramıza hoş geldin.',
-      successText: 'BLACKHIDE topluluğuna katıldın. İlk bültenini kısa sürede alacaksın.',
+      successText: 'MASTERLEATHER topluluğuna katıldın. İlk bültenini kısa sürede alacaksın.',
       unsubscribe: 'İstediğin zaman aboneliği iptal edebilirsin. Spam yok.',
     },
   },
   en: {
     why: {
-      label: 'Why BLACKHIDE',
+      label: 'Why MASTERLEATHER',
       title: 'Built Different.',
       titleEm: 'Priced Fairly.',
       pillars: [
@@ -301,7 +301,7 @@ export const extraTranslations = {
       badges: ['Free shipping over $150', '30-day returns', 'Lifetime repair guarantee', 'Secure checkout'],
     },
     lifestyle: {
-      label: 'The BLACKHIDE Standard',
+      label: 'The MASTERLEATHER Standard',
       quote: '"Leather tells the story of those who carry it."',
       subtitle: 'Every scratch, fold, and darkened edge is a mark of real use. We make leather that rewards the life you live in it.',
       cta: 'Start Your Story',
@@ -319,7 +319,7 @@ export const extraTranslations = {
       placeholder: 'your@email.com',
       subscribe: 'Subscribe',
       successTitle: 'You are in.',
-      successText: 'Welcome to the BLACKHIDE community. Expect your first dispatch soon.',
+      successText: 'Welcome to the MASTERLEATHER community. Expect your first dispatch soon.',
       unsubscribe: 'Unsubscribe at any time. No spam, ever.',
     },
   },

@@ -4,7 +4,7 @@ import Link from 'next/link'
 export const metadata: Metadata = {
   title: 'Our Craft',
   description:
-    'The story behind BLACKHIDE — genuine leather goods made by hand, built to last a lifetime.',
+    'The story behind MASTERLEATHER — genuine leather goods made by hand, built to last a lifetime.',
 }
 
 const values = [
@@ -45,7 +45,7 @@ export default function AboutPage() {
             <em className="text-gold not-italic">That Last.</em>
           </h1>
           <p className="font-sans text-base text-cream/60 leading-loose max-w-2xl">
-            BLACKHIDE was founded in 2012 with one belief: that the best thing you can do for the
+            MASTERLEATHER was founded in 2012 with one belief: that the best thing you can do for the
             environment — and your wallet — is buy something well-made, once. We started with wallets.
             Then belts. Then bags. Then jackets. In every category, the answer to every design
             question has been the same: what will this look like in twenty years?
@@ -90,7 +90,7 @@ export default function AboutPage() {
                   seams. Nickel hardware that tarnishes in a year.
                 </p>
                 <p>
-                  We started BLACKHIDE because we could not find what we were looking for at a price
+                  We started MASTERLEATHER because we could not find what we were looking for at a price
                   that was not ludicrous. Full-grain leather, saddle-stitched by hand, with solid
                   brass hardware — available to anyone who takes their gear seriously.
                 </p>
@@ -111,7 +111,7 @@ export default function AboutPage() {
             <span className="font-sans text-xs tracking-[0.25em] uppercase text-gold font-medium block mb-4">
               What We Stand For
             </span>
-            <h2 className="font-serif text-3xl md:text-4xl text-cream">The BLACKHIDE Standard</h2>
+            <h2 className="font-serif text-3xl md:text-4xl text-cream">The MASTERLEATHER Standard</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-white/5">
             {values.map((value) => (
@@ -135,7 +135,7 @@ export default function AboutPage() {
             <br />Every Piece, Every Time.
           </h2>
           <p className="font-sans text-sm text-cream/55 leading-loose mb-10">
-            We do not outsource. We do not scale by adding machines. Every BLACKHIDE piece passes
+            We do not outsource. We do not scale by adding machines. Every MASTERLEATHER piece passes
             through the same four pairs of hands: the leather cutter, the saddle stitcher, the edge
             finisher, and the quality inspector. We have been offered the opportunity to license our
             patterns to factories. We have declined, every time.

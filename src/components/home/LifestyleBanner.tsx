@@ -15,7 +15,7 @@ export function LifestyleBanner() {
       <div className="absolute inset-0">
         <Image
           src="/images/leather-bag-lifestyle.jpg"
-          alt="BLACKHIDE lifestyle"
+          alt="MASTERLEATHER lifestyle"
           fill
           sizes="100vw"
           className="object-cover"

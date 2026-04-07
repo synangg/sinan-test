@@ -68,8 +68,8 @@ export function Hero() {
   }, [])
 
   const ringText = t.nav.since === 'Handcrafted Since 2012'
-    ? 'BLACKHIDE · HANDCRAFTED LEATHER ·      BLACKHIDE · HANDCRAFTED LEATHER ·      '
-    : 'BLACKHIDE · EL YAPIMI DERİ ·      BLACKHIDE · EL YAPIMI DERİ ·      '
+    ? 'MASTERLEATHER · HANDCRAFTED LEATHER ·      MASTERLEATHER · HANDCRAFTED LEATHER ·      '
+    : 'MASTERLEATHER · EL YAPIMI DERİ ·      MASTERLEATHER · EL YAPIMI DERİ ·      '
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">

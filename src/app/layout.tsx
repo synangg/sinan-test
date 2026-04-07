@@ -22,8 +22,8 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: 'BLACKHIDE — Premium Leather Goods',
-    template: '%s | BLACKHIDE',
+    default: 'MASTERLEATHER — Premium Leather Goods',
+    template: '%s | MASTERLEATHER',
   },
   description:
     'Handcrafted leather jackets, bags, wallets, and accessories. Full-grain leather built to last a lifetime. Free shipping on orders over $150.',
@@ -36,19 +36,19 @@ export const metadata: Metadata = {
     'premium leather',
     'shell cordovan wallet',
   ],
-  authors: [{ name: 'BLACKHIDE' }],
-  creator: 'BLACKHIDE',
+  authors: [{ name: 'MASTERLEATHER' }],
+  creator: 'MASTERLEATHER',
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    siteName: 'BLACKHIDE',
-    title: 'BLACKHIDE — Premium Leather Goods',
+    siteName: 'MASTERLEATHER',
+    title: 'MASTERLEATHER — Premium Leather Goods',
     description:
       'Handcrafted leather jackets, bags, wallets, and accessories. Full-grain leather built to last a lifetime.',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'BLACKHIDE — Premium Leather Goods',
+    title: 'MASTERLEATHER — Premium Leather Goods',
     description: 'Handcrafted leather goods. Built to last.',
   },
   robots: {

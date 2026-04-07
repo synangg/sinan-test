@@ -38,11 +38,11 @@ const faqs = [
       },
       {
         q: 'Do you repair your products?',
-        a: 'Yes — free, for life. If a seam fails, a zipper breaks, or hardware comes loose on any BLACKHIDE product, we repair it at no charge. You cover postage to us; we cover postage back.',
+        a: 'Yes — free, for life. If a seam fails, a zipper breaks, or hardware comes loose on any MASTERLEATHER product, we repair it at no charge. You cover postage to us; we cover postage back.',
       },
       {
         q: 'How do I initiate a return or repair?',
-        a: 'Email orders@blackhide.com with your order number and a brief description. We will send you a return label within 24 hours.',
+        a: 'Email orders@masterleather.com with your order number and a brief description. We will send you a return label within 24 hours.',
       },
     ],
   },
@@ -64,7 +64,7 @@ const faqs = [
       },
       {
         q: 'Do you offer custom sizing?',
-        a: 'Belts are made to order in any waist size. For jackets and bag custom dimensions, please contact us directly at hello@blackhide.com.',
+        a: 'Belts are made to order in any waist size. For jackets and bag custom dimensions, please contact us directly at hello@masterleather.com.',
       },
     ],
   },

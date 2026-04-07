@@ -36,7 +36,7 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-8">
           <div className="lg:col-span-2 space-y-6">
             <Link href="/" className="font-serif text-2xl tracking-[0.15em] text-cream hover:text-gold transition-colors">
-              BLACKHIDE
+              MASTERLEATHER
             </Link>
             <p className="font-sans text-sm text-cream/40 leading-relaxed max-w-xs">
               {f.tagline}
@@ -48,7 +48,7 @@ export function Footer() {
               <a href="#" className="text-cream/30 hover:text-gold transition-colors duration-300" aria-label="YouTube">
                 <Youtube size={18} />
               </a>
-              <a href="mailto:hello@blackhide.com" className="text-cream/30 hover:text-gold transition-colors duration-300" aria-label="Email">
+              <a href="mailto:hello@masterleather.com" className="text-cream/30 hover:text-gold transition-colors duration-300" aria-label="Email">
                 <Mail size={18} />
               </a>
             </div>
@@ -76,7 +76,7 @@ export function Footer() {
       <div className="border-t border-white/5">
         <div className="container-luxury py-6 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="font-sans text-xs text-cream/25">
-            © {new Date().getFullYear()} BLACKHIDE. {f.rights}
+            © {new Date().getFullYear()} MASTERLEATHER. {f.rights}
           </p>
           <div className="flex items-center gap-6">
             <Link href="/faq#privacy" className="font-sans text-xs text-cream/25 hover:text-cream/60 transition-colors">
